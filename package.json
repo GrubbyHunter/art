@@ -1,0 +1,25 @@
+{
+  "name": "art",
+  "version": "1.0.0",
+  "description": "微课项前端架构",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrubbyHunter/ART.git"
+  },
+  "keywords": [
+    "ART",
+    "React",
+    "antd",
+    "express"
+  ],
+  "author": "Grubby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GrubbyHunter/ART/issues"
+  },
+  "homepage": "https://github.com/GrubbyHunter/ART#readme"
+}
