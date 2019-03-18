@@ -1,4 +1,4 @@
-# ART (微课项目-前端)
+# art (微课项目-前端)
 
 > 在线视频授课网站  
 > 技术栈：react，Ant Design，webpack，express  
