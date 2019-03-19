@@ -5,14 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "启动程序",
+      "name": "启动打包",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "start" //这里的dev就对应package.json中的scripts中的dev
-      ],
-      "port": 3000 //这个端口是调试的端口，不是项目启动的端口
+      "program": "${workspaceRoot}\\config\\webpack.config.js",
+      "env": {
+        "NODE_ENV": "development"
+      }
     }
   ]
 }
