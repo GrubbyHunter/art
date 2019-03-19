@@ -6,7 +6,7 @@
 
 ## 2、下载依赖包
 
-> `yarn install` 或者 `npm install`
+> `yarn add` 或者 `npm install`
 
 ## 3、启动项目
 

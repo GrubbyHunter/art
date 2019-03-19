@@ -1,0 +1,54 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "jquery": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "_": true,
+    "BrowserRouter": true,
+    "React": true,
+    "ReactDOM": true,
+    "$": true,
+    "wa": true,
+    "Internal": true,
+    "__bridge_callback": true,
+    "__writeLocalStorage": true,
+    "firstSplashIndex": true,
+    "google": true,
+    "BMap": true,
+    "ga": true,
+    "_sendOrder": true,
+    "describe": true,
+    "expect": true,
+    "it": true,
+    "db": true,
+    "ApplePaySession": true
+  },
+  "rules": {
+    "no-console": "off",
+    "no-unsafe-negation": "error",
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "after-used"
+      }
+    ],
+    "jsx-quotes": ["warn", "prefer-double"],
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "no-undef": "error"
+  },
+  "plugins": ["react"]
+}
