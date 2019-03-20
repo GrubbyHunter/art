@@ -41,6 +41,7 @@ const sassModuleRegex = /\.module\.(scss|sass)$/
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
+//testWebpack("development")
 module.exports = function(webpackEnv) {
   const isEnvDevelopment = webpackEnv === "development"
   const isEnvProduction = webpackEnv === "production"
@@ -115,7 +116,6 @@ module.exports = function(webpackEnv) {
   let entryPaths = {}
   Object.keys(paths.allControllerPath).forEach(item => {
     entryPaths[item] = [
-      require.resolve("./polyfills"),
       require.resolve("react-dev-utils/webpackHotDevClient"),
       require.resolve("react-error-overlay"),
       paths.allControllerPath[item]
@@ -129,7 +129,7 @@ module.exports = function(webpackEnv) {
       new HtmlWebpackPlugin({
         inject: true,
         chunks: [item],
-        template: `${paths.allControllerPath[item]}/index.html`,
+        template: paths.appHtml,
         filename: `${item}/index.html`
       })
     )
@@ -146,15 +146,7 @@ module.exports = function(webpackEnv) {
       : isEnvDevelopment && "cheap-module-source-map",
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
-    entry: [
-      isEnvDevelopment &&
-        require.resolve("react-dev-utils/webpackHotDevClient"),
-      // Finally, this is your app's code:
-      entryPaths
-      // We include the app code last so that if there is a runtime error during
-      // initialization, it doesn't blow up the WebpackDevServer client, and
-      // changing JS code would still trigger a refresh.
-    ].filter(Boolean),
+    entry: entryPaths,
     output: {
       // The build folder.
       path: isEnvProduction ? paths.appBuild : undefined,
@@ -597,7 +589,9 @@ module.exports = function(webpackEnv) {
           // The formatter is invoked directly in WebpackDevServerUtils during development
           formatter: isEnvProduction ? typescriptFormatter : undefined
         })
-    ].filter(Boolean),
+    ]
+      .concat(plugins)
+      .filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.
     node: {

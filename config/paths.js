@@ -73,7 +73,7 @@ function allControllerPath(source) {
   const isDirectory = source => lstatSync(source).isDirectory()
   readdirSync(source).map(name => {
     let path = join(resolveApp(source), name)
-    if (isDirectory(path)) result[name] = path
+    if (!isDirectory(path)) result[name.split(".")[0]] = path
   })
   return result
 }
