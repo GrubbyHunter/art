@@ -2,8 +2,9 @@ import React, { Component } from "react"
 import logo from "./../../webresource/svg/logo.svg"
 import "./../../webresource/css/index.css"
 
-class App extends Component {
+class Index extends Component {
   render() {
+    debugger
     return (
       <div className="App">
         <header className="App-header">
@@ -25,4 +26,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Index

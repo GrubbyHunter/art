@@ -12,6 +12,15 @@
       "env": {
         "NODE_ENV": "development"
       }
+    },
+    {
+      "name": "DevServer 代理",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}\\config\\webpackDevServer.config.js",
+      "env": {
+        "NODE_ENV": "development"
+      }
     }
   ]
 }
