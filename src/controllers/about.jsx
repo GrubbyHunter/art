@@ -15,6 +15,7 @@ import * as serviceWorker from "../serviceWorker"
 ReactDOM.render(
   <div className="container">
     <Header />
+    <div>关于我们</div>
     <Footer />
   </div>,
   document.getElementById("root")

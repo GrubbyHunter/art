@@ -12,11 +12,14 @@ const host = process.env.HOST || "0.0.0.0"
 const rewrites = []
 Object.keys(paths.allControllerPath).forEach(item => {
   rewrites.push({
-    from: new RegExp(`^\\/${item}/`, "i"),
-    to: `/${item}/index.html`
+    from: new RegExp(`^\\/${item}`, "i"),
+    to: `/${item}.html`
   })
 })
-
+rewrites.push({
+  from: new RegExp(`^\\/`, "i"),
+  to: `/index.html`
+})
 module.exports = function(proxy, allowedHost) {
   return {
     // WebpackDevServer 2.4.3 introduced a security fix that prevents remote

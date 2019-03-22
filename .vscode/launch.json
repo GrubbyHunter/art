@@ -8,7 +8,7 @@
       "name": "启动打包",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceRoot}\\config\\webpack.config.js",
+      "program": "${workspaceRoot}\\scripts\\start.js",
       "env": {
         "NODE_ENV": "development"
       }
