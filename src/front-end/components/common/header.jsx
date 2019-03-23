@@ -5,10 +5,19 @@
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import React, { Component } from "react"
-import { MENU} from "../../common/text" 
-class Header extends Component { 
+import { MENU } from "./../../common/text"
+class Header extends Component {
   render() {
-    return <header>我是头部</header>
+    return (
+      <header>
+        <ul>
+          {_.map(MENU, (item, key) => {
+            return <li key={key}>{item.title}</li>
+          })}
+          <li />
+        </ul>
+      </header>
+    )
   }
 }
 

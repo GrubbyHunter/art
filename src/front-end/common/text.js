@@ -4,14 +4,14 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-const text = {
-  MENU:[
-    {title:"首页"},
-    {title:"课程分类"},
-    {title:"特训教室"},
-    {title:"讲师"},
-    {title:"学员作业"}
+
+let text = {
+  MENU: [
+    { title: "首页" },
+    { title: "课程分类" },
+    { title: "特训教室" },
+    { title: "讲师" },
+    { title: "学员作业" }
   ]
 }
-
-export default text
+module.exports = text
