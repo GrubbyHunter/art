@@ -1,10 +1,9 @@
 import React, { Component } from "react"
-import logo from "./../../webresource/svg/logo.svg"
-import "./../../webresource/css/index.css"
+import logo from "./../../resource/svg/logo.svg"
+import "./../../resource/css/index.css"
 
 class Index extends Component {
   render() {
-    debugger
     return (
       <div className="App">
         <header className="App-header">

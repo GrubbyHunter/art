@@ -85,7 +85,7 @@ module.exports = {
   appBuild: resolveApp("build"),
   appPublic: resolveApp("public"),
   appHtml: resolveApp("public/index.html"),
-  allControllerPath: allControllerPath("src/controllers"),
+  allControllerPath: allControllerPath("src/front-end/controllers"),
   appPackageJson: resolveApp("package.json"),
   appSrc: resolveApp("src"),
   appTsConfig: resolveApp("tsconfig.json"),
