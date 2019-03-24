@@ -1,8 +1,11 @@
-import React, { Component } from "react"
+import React from "react"
 import logo from "./../../resource/svg/logo.svg"
-import "./../../resource/css/index.css"
 
-class Index extends Component {
+import "antd/dist/antd.css"
+import "./../../resource/css/common.less"
+import "./../../resource/css/index.less"
+
+class Index extends React.Component {
   render() {
     return (
       <div className="App">
@@ -11,7 +14,6 @@ class Index extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-
         </header>
       </div>
     )

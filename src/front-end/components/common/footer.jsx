@@ -4,9 +4,9 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React, { Component } from "react"
+import React from "react"
 
-class Footer extends Component {
+class Footer extends React.Component {
   render() {
     return <footer>我是底部</footer>
   }
