@@ -13,8 +13,10 @@ class InfoItemComponent extends React.Component {
     let { item } = this.props
 
     return (
-      <div className="info-container" name={item.key}>
-        <h2>{item.title}</h2>
+      <div className="info-container">
+        <a className="h-title" name={item.key}>
+          {item.title}
+        </a>
         {this.renderInfoTag()}
         {this.renderItemList()}
       </div>
