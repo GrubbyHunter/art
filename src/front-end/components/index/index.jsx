@@ -9,6 +9,7 @@ import "antd/dist/antd.css"
 import "./../../resource/css/common.less"
 import "./../../resource/css/index.less"
 import Banner from "./banner"
+import InfoList from "./info-list"
 import Tab from "./tab"
 
 class Index extends React.Component {
@@ -17,6 +18,7 @@ class Index extends React.Component {
       <div className="main">
         <Banner />
         <Tab />
+        <InfoList />
       </div>
     )
   }

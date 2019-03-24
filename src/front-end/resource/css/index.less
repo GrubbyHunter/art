@@ -67,7 +67,6 @@
       }
 
       display: inline-block;
-      margin: 0 20px 0 150px;
       height: 75px;
       line-height: 75px;
 
@@ -75,6 +74,52 @@
         padding: 0 30px;
         font-size: 24px;
         font-weight: 700;
+      }
+    }
+  }
+
+  .info-list {
+    width: @main-width;
+    margin: auto;
+    text-align: center;
+
+    .info-container {
+      h2 {
+        margin: 40px 0 10px 0;
+        color: #666;
+        font-weight: bold;
+      }
+
+      .info-tag {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+
+        ul {
+          display: inline-block;
+          list-style: none;
+
+          li {
+            display: inline-block;
+            background-color: #ffa2c9;
+            .radius(1rem);
+            padding: 0 15px;
+            color: #ffffff;
+            margin: 0 5px;
+            &:hover {
+              cursor: pointer;
+              background-color: #f7c6da;
+            }
+          }
+        }
+
+        .tag-more {
+          color: #ffa2c9;
+          float: right;
+          height: 30px;
+          display: block;
+          text-decoration: underline;
+        }
       }
     }
   }
