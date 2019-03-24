@@ -94,6 +94,7 @@
         height: 30px;
         line-height: 30px;
         font-size: 14px;
+        margin-bottom: 15px;
 
         ul {
           display: inline-block;
@@ -119,6 +120,57 @@
           height: 30px;
           display: block;
           text-decoration: underline;
+        }
+      }
+
+      .item-list {
+        overflow: hidden;
+
+        > li {
+          float: left;
+          width: 25%;
+          padding: 5px;
+          .box-sizing();
+
+          .item-img {
+            position: relative;
+
+            .lesson-count {
+              position: absolute;
+              bottom: 0;
+              left: 5px;
+              right: 5px;
+              height: 25px;
+              line-height: 25px;
+              background-color: rgba(0, 0, 0, 0.5);
+              color: #ffffff;
+              text-align: left;
+              padding-left: 10px;
+            }
+          }
+
+          .item-title {
+            background-color: white;
+
+            .lesson-title {
+              font-size: 16px;
+              text-align: left;
+              margin: 10px 6px;
+            }
+
+            .teacher {
+              font-size: 14px;
+
+              img,
+              teacher-name {
+                float: left;
+              }
+
+              .play-num {
+                float: right;
+              }
+            }
+          }
         }
       }
     }
