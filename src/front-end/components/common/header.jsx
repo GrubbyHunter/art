@@ -44,7 +44,7 @@ class Header extends React.Component {
           <Search
             placeholder="漫画"
             onSearch={value => console.log(value)}
-            style={{ width: 120 }}
+            style={{ width: 150 }}
           />
         </div>
         <div className="header-right">
