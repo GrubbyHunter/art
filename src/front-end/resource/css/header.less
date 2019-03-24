@@ -9,15 +9,48 @@
 #header {
   width: @main-width;
   margin: 0 auto;
+  overflow: hidden;
 
-  ul.ant-menu {
+  .header-logo {
+    float: left;
+
+    img {
+      width: 105px;
+      margin-top: 1px;
+    }
+  }
+
+  .header-center {
+    display: inline-block;
+
+    ul.ant-menu {
+      display: inline-block;
+      margin: 0 20px 0 150px;
+      height: 60px;
+      line-height: 60px;
+
+      > li.ant-menu-item {
+        padding: 0 20px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+
+    .ant-input-search {
+      display: inline-block;
+    }
+  }
+
+  .header-right {
+    float: right;
     height: 60px;
     line-height: 60px;
-
-    > li.ant-menu-item {
-      padding: 0 20px;
-      font-size: 16px;
-      font-weight: 700;
+    button {
+      margin-right: 15px;
+      &.ant-btn-primary {
+        background-color: @main-color;
+        border-color: @main-color;
+      }
     }
   }
 }

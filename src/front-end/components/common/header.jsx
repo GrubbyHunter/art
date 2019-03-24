@@ -5,10 +5,11 @@
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import React from "react"
+import logoWhite from "./../../resource/svg/logo_white.svg"
 import { MENU } from "./../../common/text"
 import "./../../resource/css/header.less"
-import { Menu } from "antd"
-
+import { Menu, Input, Button } from "antd"
+const Search = Input.Search
 class Header extends React.Component {
   UNSAFE_componentWillMount() {
     this.setState({
@@ -19,21 +20,37 @@ class Header extends React.Component {
   render() {
     return (
       <header id="header">
-        <Menu
-          onClick={this.handleClick}
-          selectedKeys={[this.state.current]}
-          mode="horizontal" // 导航条的方向
-        >
-          {_.map(MENU, (item, key) => {
-            return (
-              <Menu.Item key={key}>
-                <a href="" target="_blank">
-                  {item.title}
-                </a>
-              </Menu.Item>
-            )
-          })}
-        </Menu>
+        <div className="header-logo">
+          <a href="/">
+            <img src={logoWhite} alt="logo" />
+          </a>
+        </div>
+        <div className="header-center">
+          <Menu
+            onClick={this.handleClick}
+            selectedKeys={[this.state.current]}
+            mode="horizontal" // 导航条的方向
+          >
+            {_.map(MENU, (item, key) => {
+              return (
+                <Menu.Item key={key}>
+                  <a href="" target="_blank">
+                    {item.title}
+                  </a>
+                </Menu.Item>
+              )
+            })}
+          </Menu>
+          <Search
+            placeholder="漫画"
+            onSearch={value => console.log(value)}
+            style={{ width: 120 }}
+          />
+        </div>
+        <div className="header-right">
+          <Button>注册</Button>
+          <Button type="primary">登录</Button>
+        </div>
       </header>
     )
   }
