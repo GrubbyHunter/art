@@ -32,9 +32,9 @@ class Header extends React.Component {
             selectedKeys={[this.state.current]}
             mode="horizontal" // 导航条的方向
           >
-            {_.map(MENU, (item, key) => {
+            {_.map(MENU, item => {
               return (
-                <Menu.Item key={key}>
+                <Menu.Item key={item.key}>
                   <a href="" target="_blank">
                     {item.title}
                   </a>

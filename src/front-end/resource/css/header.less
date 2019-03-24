@@ -27,6 +27,14 @@
       &.ant-menu-horizontal {
         border: none;
 
+        > li.ant-menu-item-selected {
+          border-bottom-color: @main-color;
+
+          a {
+            color: @main-color;
+          }
+        }
+
         .ant-menu-item {
           &:hover {
             border-bottom-color: @main-color;
