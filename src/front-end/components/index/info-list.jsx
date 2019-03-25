@@ -7,9 +7,9 @@
 import React from "react"
 import { TAB } from "./../../common/text"
 import InfoItem from "./info-item"
-
 class InfoListComponent extends React.Component {
   render() {
+    debugger
     return (
       <div className="info-list">
         {_.map(TAB, (item, key) => {
