@@ -5,7 +5,6 @@
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import React from "react"
-import { TAB } from "./../../common/text"
 import Item from "./item"
 
 class InfoItemComponent extends React.Component {
