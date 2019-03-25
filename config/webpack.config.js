@@ -121,6 +121,12 @@ module.exports = function(webpackEnv) {
       paths.allControllerPath[item]
     ]
   })
+  // 初始化文件作为单独的一个入口
+  entryPaths.init = [
+    require.resolve("react-dev-utils/webpackHotDevClient"),
+    require.resolve("react-error-overlay"),
+    paths.appInit
+  ]
 
   // 动态生成 plugins
   let plugins = []
@@ -128,7 +134,8 @@ module.exports = function(webpackEnv) {
     plugins.push(
       new HtmlWebpackPlugin({
         inject: true,
-        chunks: [item],
+        chunks: ['init',item],
+        chunksSortMode: 'manual', // 按照指定顺序导入
         template: paths.appHtml,
         filename: `${item}.html`
       })
@@ -294,7 +301,6 @@ module.exports = function(webpackEnv) {
       rules: [
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
-
         // First, run the linter.
         // It's important to do this before Babel processes the JS.
         {
@@ -471,34 +477,6 @@ module.exports = function(webpackEnv) {
       ]
     },
     plugins: [
-      // Generates an `index.html` file with the <script> injected.
-      // new HtmlWebpackPlugin(
-      //   Object.assign(
-      //     {},
-      //     {
-      //       inject: true,
-      //       template: paths.appHtml
-      //     },
-      //     isEnvProduction
-      //       ? {
-      //           minify: {
-      //             removeComments: true,
-      //             collapseWhitespace: true,
-      //             removeRedundantAttributes: true,
-      //             useShortDoctype: true,
-      //             removeEmptyAttributes: true,
-      //             removeStyleLinkTypeAttributes: true,
-      //             keepClosingSlash: true,
-      //             minifyJS: true,
-      //             minifyCSS: true,
-      //             minifyURLs: true
-      //           }
-      //         }
-      //       : undefined
-      //   )
-      // ),
-      // Inlines the webpack runtime script. This script is too small to warrant
-      // a network request.
       isEnvProduction &&
         shouldInlineRuntimeChunk &&
         new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime~.+[.]js/]),
@@ -544,6 +522,12 @@ module.exports = function(webpackEnv) {
         fileName: "asset-manifest.json",
         publicPath: publicPath
       }),
+      
+      // 引入jquery和underscode第三方库
+      new webpack.ProvidePlugin({
+        _: "underscore"
+      }),
+
       // Moment.js is an extremely popular library that bundles large locale files
       // by default due to how Webpack interprets its code. This is a practical
       // solution that requires the user to opt into importing specific locales.
