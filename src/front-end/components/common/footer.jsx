@@ -5,7 +5,7 @@
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import React from "react"
-
+import "./../../resource/css/footer.less"
 class Footer extends React.Component {
   render() {
     return <footer>我是底部</footer>
