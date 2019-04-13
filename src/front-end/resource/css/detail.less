@@ -25,9 +25,48 @@
     width: 100%;
     background-color: white;
 
-    video {
-      width: 800px;
-      height: 480px;
+    .video-detail {
+      padding: 10px;
+      overflow: hidden;
+
+      video {
+        float: left;
+        width: 800px;
+        height: 450px;
+      }
+
+      .video-directory {
+        float: right;
+        width: 370px;
+        height: 450px;
+        overflow-y: scroll;
+
+        .ant-menu-sub.ant-menu-inline > li.ant-menu-item {
+          &::after {
+            left: 30px;
+            top: 15px;
+            border: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #afafaf;
+            .radius(30px);
+            opacity: 1;
+            .transform(none);
+          }
+
+          &.ant-menu-item-selected {
+            &::after {
+              background-color: #d76394;
+            }
+          }
+        }
+
+        li,
+        span,
+        a {
+          color: #000000;
+        }
+      }
     }
   }
 }

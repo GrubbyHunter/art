@@ -14,3 +14,14 @@
   -moz-box-sizing: border-box; /* Firefox */
   -webkit-box-sizing: border-box; /* Safari */
 }
+
+//單一屬性值
+.transform(@property,@value) {
+  -webkit-transform-@{property}: @value;
+  transform-@{property}: @value;
+}
+//縮寫
+.transform(@value) {
+  -webkit-transform: @value;
+  transform: @value;
+}
