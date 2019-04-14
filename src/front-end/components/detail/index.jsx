@@ -10,13 +10,15 @@ import "./../../resource/css/common.less"
 import "./../../resource/css/detail.less"
 import BreadCrumb from "./bread-crumb"
 import VideoInfo from "./video-info/index"
+import LessonInfo from "./lesson-info/index"
 
 class Index extends React.Component {
   render() {
     return (
-      <div className='detail'>
+      <div className="detail">
         <BreadCrumb />
         <VideoInfo />
+        <LessonInfo />
       </div>
     )
   }
