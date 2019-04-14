@@ -8,8 +8,9 @@ import React from "react"
 
 class LessonMenuComponent extends React.Component {
   render() {
+    let className = this.state.visible ? "lesson-menu" : "lesson-menu hidden"
     return (
-      <div className="lesson-menu">
+      <div className={className}>
         <ul>
           <li>
             <h3>章节1：线稿回执的基础讲解</h3>
