@@ -8,10 +8,10 @@ import React from "react"
 import Lesson from "./lesson"
 import Author from "./author"
 
-class LessionInfoComponent extends React.Component {
+class LessonInfoComponent extends React.Component {
   render() {
     return (
-      <div className="lesson-info">
+      <div className="lesson">
         <Lesson />
         <Author />
       </div>
@@ -19,4 +19,4 @@ class LessionInfoComponent extends React.Component {
   }
 }
 
-export default LessionInfoComponent
+export default LessonInfoComponent

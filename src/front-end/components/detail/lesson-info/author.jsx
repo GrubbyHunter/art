@@ -8,7 +8,7 @@ import React from "react"
 
 class AuthorComponent extends React.Component {
   render() {
-    return <div className="f-r">关于作者</div>
+    return <div className="author f-r">关于作者</div>
   }
 }
 

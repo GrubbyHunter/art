@@ -119,7 +119,36 @@
     }
   }
 
-  .lesson-info {
+  .lesson {
     margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+    overflow: hidden;
+
+    .lesson-info {
+      width: 900px;
+
+      li.ant-menu-item {
+        padding: 0 30px;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        color: 000;
+
+        &:hover {
+          border-bottom-color: @main-color;
+          color: @main-color;
+        }
+
+        &.ant-menu-item-selected {
+          border-bottom-color: @main-color;
+          color: @main-color;
+        }
+      }
+    }
+
+    .author {
+      width: 100px;
+    }
   }
 }
