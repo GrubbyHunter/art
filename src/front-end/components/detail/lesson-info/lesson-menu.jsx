@@ -9,6 +9,7 @@ import React from "react"
 class LessonMenuComponent extends React.Component {
   render() {
     let className = this.props.visible ? "lesson-menu" : "lesson-menu hidden"
+
     return (
       <div className={className}>
         <ul>
