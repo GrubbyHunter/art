@@ -44,20 +44,20 @@ class LessonIndexComponent extends React.Component {
   }
 
   handleClickTab(index) {
-    debugger
     if (index == DESC) {
       this.setState({
         descVisible: true,
         menuVisible: false,
         current: "1"
       })
-    } else {
-      this.setState({
-        descVisible: false,
-        menuVisible: true,
-        current: "2"
-      })
+      return
     }
+
+    this.setState({
+      descVisible: false,
+      menuVisible: true,
+      current: "2"
+    })
   }
 }
 

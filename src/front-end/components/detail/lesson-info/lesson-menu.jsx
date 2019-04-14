@@ -12,26 +12,44 @@ class LessonMenuComponent extends React.Component {
 
     return (
       <div className={className}>
-        <ul>
+        <ul className="menu-list">
           <li>
             <h3>章节1：线稿回执的基础讲解</h3>
             <ul>
-              <li>1-1 免费试听课程 20:15</li>
-              <li>1-2 光影理论讲解 23:17</li>
+              <li>
+                <div className="f-l">1-1 免费试听课程</div>
+                <div className="f-r">20:15</div>
+              </li>
+              <li>
+                <div className="f-l">1-2 光影理论讲解</div>
+                <div className="f-r">23:17</div>
+              </li>
             </ul>
           </li>
           <li>
             <h3>章节1：线稿回执的基础讲解</h3>
             <ul>
-              <li>1-1 免费试听课程 20:15</li>
-              <li>1-2 光影理论讲解 23:17</li>
+              <li>
+                <div className="f-l">1-1 免费试听课程</div>
+                <div className="f-r">20:15</div>
+              </li>
+              <li>
+                <div className="f-l">1-2 光影理论讲解</div>
+                <div className="f-r">23:17</div>
+              </li>
             </ul>
           </li>
           <li>
             <h3>章节1：线稿回执的基础讲解</h3>
             <ul>
-              <li>1-1 免费试听课程 20:15</li>
-              <li>1-2 光影理论讲解 23:17</li>
+              <li>
+                <div className="f-l">1-1 免费试听课程</div>
+                <div className="f-r">20:15</div>
+              </li>
+              <li>
+                <div className="f-l">1-2 光影理论讲解</div>
+                <div className="f-r">23:17</div>
+              </li>
             </ul>
           </li>
         </ul>
