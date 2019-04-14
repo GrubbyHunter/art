@@ -9,7 +9,7 @@ import LessonDesc from "./lesson-desc"
 import LessonMenu from "./lesson-menu"
 import { Menu } from "antd"
 const DESC = 1,
-  TAB = 2
+  MENU = 2
 
 class LessonIndexComponent extends React.Component {
   render() {
@@ -24,7 +24,7 @@ class LessonIndexComponent extends React.Component {
           <Menu.Item key="1" onClick={this.handleClickTab.bind(this, DESC)}>
             <a href="#">课程概述</a>
           </Menu.Item>
-          <Menu.Item key="2" onClick={this.handleClickTab.bind(this, TAB)}>
+          <Menu.Item key="2" onClick={this.handleClickTab.bind(this, MENU)}>
             <a href="#">目录</a>
           </Menu.Item>
         </Menu>

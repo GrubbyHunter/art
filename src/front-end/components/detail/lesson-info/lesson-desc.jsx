@@ -1,16 +1,16 @@
 /**
- * 视频相关描述组件
- * @Component VideoDescComponent
+ * 视频课程介绍组件
+ * @Component LessonDescComponent
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import React from "react"
-import { Button } from "antd"
 
-class VideoDescComponent extends React.Component {
+class LessonDescComponent extends React.Component {
   render() {
+    //if(this.state.visible){}
     return <div className="lesson-desc">课程概况</div>
   }
 }
 
-export default VideoDescComponent
+export default LessonDescComponent
