@@ -13,7 +13,7 @@ class AuthorComponent extends React.Component {
         <div className="author-desc">讲师介绍</div>
         <div className="author-info">
           <div className="logo" />
-          <div className="author-name" />
+          <div className="author-name">大大</div>
         </div>
         <div className="product-name">讲师作品</div>
         <div className="product-list" />

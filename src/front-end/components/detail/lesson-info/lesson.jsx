@@ -15,9 +15,9 @@ class LessonIndexComponent extends React.Component {
   // eslint-disable-next-line react/no-deprecated
   componentWillMount() {
     this.setState({
-      descVisible: true,
-      menuVisible: false,
-      current: "1"
+      descVisible: false,
+      menuVisible: true,
+      current: "2"
     })
   }
 
