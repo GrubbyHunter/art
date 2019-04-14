@@ -8,8 +8,9 @@ import React from "react"
 
 class LessonDescComponent extends React.Component {
   render() {
-    //if(this.state.visible){}
-    return <div className="lesson-desc">课程概况</div>
+    let className = this.state.visible ? "lesson-desc" : "hidden"
+
+    return <div className={className}>课程概况</div>
   }
 }
 
