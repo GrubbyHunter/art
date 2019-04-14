@@ -12,6 +12,15 @@ const DESC = 1,
   MENU = 2
 
 class LessonIndexComponent extends React.Component {
+  // eslint-disable-next-line react/no-deprecated
+  componentWillMount() {
+    this.setState({
+      descVisible: true,
+      menuVisible: false,
+      current: "1"
+    })
+  }
+
   render() {
     let { descVisible, menuVisible } = this.state
     return (
