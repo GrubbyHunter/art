@@ -1,4 +1,5 @@
 # art 项目
+> express + react + antd + webpack构建的前端项目
 
 ## 1、clone 项目到本地
 
