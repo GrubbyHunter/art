@@ -4,12 +4,23 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
-import { TAB } from "./../../common/text"
-import InfoItem from "./info-item"
+import React from 'react'
+import { TAB } from './../../common/text'
+import InfoItem from './info-item'
+import GetListModel from '../../model/get-list'
 class InfoListComponent extends React.Component {
+  UNSAFE_componentWillMount() {
+    let request = GetListModel.fetch().then(
+      data => {
+        debugger
+      },
+      error => {
+        debugger
+      }
+    )
+  }
+
   render() {
-    debugger
     return (
       <div className="info-list">
         {_.map(TAB, (item, key) => {

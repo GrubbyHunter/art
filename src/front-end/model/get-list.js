@@ -4,12 +4,13 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import Ajax from "./ajax"
+import Ajax from './ajax'
+
 class GetList extends Ajax {
-  constructor(){
+  constructor() {
     super()
-    this.name = "GET_LIST"
-    this.url = "fetch/get/list"
+    this.name = 'GET_LIST'
+    this.url = 'course/lists'
   }
 
   setParam(param) {
@@ -17,6 +18,8 @@ class GetList extends Ajax {
 
     return this
   }
-
 }
-module.exports = new GetList()
+
+let model = new GetList()
+
+export default model

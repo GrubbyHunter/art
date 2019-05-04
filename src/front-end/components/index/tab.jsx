@@ -4,14 +4,14 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
-import { Menu } from "antd"
-import { TAB } from "./../../common/text"
+import React from 'react'
+import { Menu } from 'antd'
+import { TAB } from './../../common/text'
 
 class TabComponent extends React.Component {
   UNSAFE_componentWillMount() {
     this.setState({
-      current: "recommend"
+      current: 'recommend'
     })
   }
 

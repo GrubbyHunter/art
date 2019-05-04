@@ -4,12 +4,12 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
-import banner001 from "./../../resource/img/banner001.jpg"
-import banner002 from "./../../resource/img/banner002.jpg"
-import banner003 from "./../../resource/img/banner003.jpg"
-import banner004 from "./../../resource/img/banner004.jpg"
-import { Carousel } from "antd"
+import React from 'react'
+import banner001 from './../../resource/img/banner001.jpg'
+import banner002 from './../../resource/img/banner002.jpg'
+import banner003 from './../../resource/img/banner003.jpg'
+import banner004 from './../../resource/img/banner004.jpg'
+import { Carousel } from 'antd'
 
 class BannerComponent extends React.Component {
   render() {

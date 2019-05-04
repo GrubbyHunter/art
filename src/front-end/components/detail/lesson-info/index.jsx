@@ -4,9 +4,9 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
-import Lesson from "./lesson"
-import Author from "./author"
+import React from 'react'
+import Lesson from './lesson'
+import Author from './author'
 
 class LessonInfoComponent extends React.Component {
   render() {

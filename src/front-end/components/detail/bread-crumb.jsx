@@ -4,18 +4,18 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
-import { Breadcrumb } from "antd"
+import React from 'react'
+import { Breadcrumb } from 'antd'
 class BreadCrumbComponent extends React.Component {
   render() {
     return (
-      <Breadcrumb separator='>'>
+      <Breadcrumb separator=">">
         <Breadcrumb.Item>推荐课程</Breadcrumb.Item>
         <Breadcrumb.Item>
-          <a href='#1'>日系角色绘制基础</a>
+          <a href="#1">日系角色绘制基础</a>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
-          <a href='#1'>1、线稿绘制</a>
+          <a href="#1">1、线稿绘制</a>
         </Breadcrumb.Item>
       </Breadcrumb>
     )

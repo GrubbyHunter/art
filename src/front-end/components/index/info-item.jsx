@@ -4,8 +4,8 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
-import Item from "./item"
+import React from 'react'
+import Item from './item'
 
 class InfoItemComponent extends React.Component {
   render() {

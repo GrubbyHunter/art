@@ -4,10 +4,10 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
-import LessonDesc from "./lesson-desc"
-import LessonMenu from "./lesson-menu"
-import { Menu } from "antd"
+import React from 'react'
+import LessonDesc from './lesson-desc'
+import LessonMenu from './lesson-menu'
+import { Menu } from 'antd'
 const DESC = 1,
   MENU = 2
 
@@ -17,7 +17,7 @@ class LessonIndexComponent extends React.Component {
     this.setState({
       descVisible: false,
       menuVisible: true,
-      current: "2"
+      current: '2'
     })
   }
 
@@ -48,7 +48,7 @@ class LessonIndexComponent extends React.Component {
       this.setState({
         descVisible: true,
         menuVisible: false,
-        current: "1"
+        current: '1'
       })
       return
     }
@@ -56,7 +56,7 @@ class LessonIndexComponent extends React.Component {
     this.setState({
       descVisible: false,
       menuVisible: true,
-      current: "2"
+      current: '2'
     })
   }
 }

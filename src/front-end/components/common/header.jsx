@@ -4,17 +4,17 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
-import "./../../resource/css/header.less"
-import { Menu, Input, Button } from "antd"
-import logoWhite from "./../../resource/svg/logo_white.svg"
-import { MENU } from "./../../common/text"
+import React from 'react'
+import './../../resource/css/header.less'
+import { Menu, Input, Button } from 'antd'
+import logoWhite from './../../resource/svg/logo_white.svg'
+import { MENU } from './../../common/text'
 
 const Search = Input.Search
 class Header extends React.Component {
   UNSAFE_componentWillMount() {
     this.setState({
-      current: "index"
+      current: 'index'
     })
   }
 

@@ -4,16 +4,16 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
-import Video from "./video"
-import VideoDesc from "./video-desc"
-import VideoDirectory from "./video-directory"
+import React from 'react'
+import Video from './video'
+import VideoDesc from './video-desc'
+import VideoDirectory from './video-directory'
 
 class VideoIndexComponent extends React.Component {
   render() {
     return (
-      <div className='video-info'>
-        <div className='video-detail'>
+      <div className="video-info">
+        <div className="video-detail">
           <Video />
           <VideoDirectory />
         </div>

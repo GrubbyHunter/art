@@ -18,54 +18,42 @@
  * @param [int] timeout	设置本地的请求超时时间（以毫秒计）,默认20s。
  * @param [string] type	规定请求的类型（GET 或 POST），默认post。
  */
-class Ajax {
+export default class Ajax {
   constructor() {
-    this.url = ""
+    this.origin = 'http://111.67.206.67/'
+    this.url = ''
     this.async = true
     this.beforeSend = () => console.log(`开始发起${name}请求`)
     this.data = {}
-    this.name = ""
-    this.dataType = "json"
+    this.name = ''
+    this.dataType = 'json'
     this.success = () => console.log(`请求${name}成功`)
     this.error = err => console.log(`请求${name}失败`, err)
-    ;(this.timeout = 20000), (this.type = "POST")
+    this.timeout = 2000
+    this.type = 'POST'
+  }
+
+  setParam(data) {
+    this.data = data
+    return this
   }
 
   fetch() {
-    let {
-      url,
-      async,
-      type,
-      dataType,
-      data,
-      timeout,
-      beforeSend,
-      error,
-      success
-    } = this
+    let { url, async, type, dataType, data, timeout, beforeSend } = this
 
-    if (_.isEmpty(this.url)) {
+    if (_.isEmpty(url)) {
       alert(`请求链接不能为空`)
       return
     }
 
-    if (_.isEmpty(this.data)) {
-      alert(`请求参数不能为空`)
-      return
-    }
-
-    $.ajax({
-      url,
+    return $.ajax({
+      url: this.origin + url,
       async,
       type,
       dataType,
       data,
       timeout,
-      beforeSend: () => beforeSend(),
-      error: err => error(err),
-      success: data => success(data)
+      beforeSend: () => beforeSend()
     })
   }
 }
-
-module.exports = Ajax

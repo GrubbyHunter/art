@@ -51,5 +51,13 @@
     "react/prop-types": "off",
     "no-undef": "error"
   },
-  "plugins": ["react"]
+  "plugins": ["react"],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect",
+      "flowVersion": "0.53"
+    }
+  }
 }

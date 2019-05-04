@@ -4,11 +4,11 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
+import React from 'react'
 
 class LessonMenuComponent extends React.Component {
   render() {
-    let className = this.props.visible ? "lesson-menu" : "lesson-menu hidden"
+    let className = this.props.visible ? 'lesson-menu' : 'lesson-menu hidden'
 
     return (
       <div className={className}>

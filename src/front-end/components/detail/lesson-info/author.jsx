@@ -4,7 +4,7 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from "react"
+import React from 'react'
 
 class AuthorComponent extends React.Component {
   render() {
