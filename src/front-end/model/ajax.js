@@ -26,7 +26,7 @@ export default class Ajax {
     this.beforeSend = () => console.log(`开始发起${name}请求`)
     this.data = {}
     this.name = ''
-    this.dataType = 'json'
+    //this.dataType = 'text'
     this.success = () => console.log(`请求${name}成功`)
     this.error = err => console.log(`请求${name}失败`, err)
     this.timeout = 2000
@@ -53,7 +53,16 @@ export default class Ajax {
       dataType,
       data,
       timeout,
-      beforeSend: () => beforeSend()
+      beforeSend: () => beforeSend(),
+      dataFilter: this.dataFormat
     })
+  }
+
+  dataFormat(data) {
+    if (!data) {
+      return ''
+    }
+
+    return data
   }
 }
