@@ -15,7 +15,7 @@ class InfoListComponent extends React.Component {
         debugger
       },
       error => {
-        console.warn('请求列表失败', error)
+        console.error('请求列表失败', error)
       }
     )
   }

@@ -5,7 +5,7 @@
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import Ajax from './ajax'
-
+import { C_TYPE } from './../common/text'
 class GetList extends Ajax {
   constructor() {
     super()
@@ -17,13 +17,6 @@ class GetList extends Ajax {
     this.param = param
 
     return this
-  }
-
-  // 格式化数据
-  dataFormat(data) {
-    if (!data) {
-      return []
-    }
   }
 }
 

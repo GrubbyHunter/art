@@ -26,7 +26,7 @@ export default class Ajax {
     this.beforeSend = () => console.log(`开始发起${name}请求`)
     this.data = {}
     this.name = ''
-    //this.dataType = 'text'
+    this.dataType = 'json'
     this.success = () => console.log(`请求${name}成功`)
     this.error = err => console.log(`请求${name}失败`, err)
     this.timeout = 2000
@@ -38,15 +38,24 @@ export default class Ajax {
     return this
   }
 
-  fetch() {
-    let { url, async, type, dataType, data, timeout, beforeSend } = this
+  fetch(successFun, errorFun) {
+    let {
+      url,
+      async,
+      type,
+      dataType,
+      data,
+      timeout,
+      beforeSend,
+      dataFormat
+    } = this
 
     if (_.isEmpty(url)) {
       alert(`请求链接不能为空`)
       return
     }
 
-    return $.ajax({
+    $.ajax({
       url: this.origin + url,
       async,
       type,
@@ -54,7 +63,12 @@ export default class Ajax {
       data,
       timeout,
       beforeSend: () => beforeSend(),
-      dataFilter: this.dataFormat
+      success: data => {
+        // 返回之前先格式化数据
+        data = dataFormat(data)
+        successFun(data)
+      },
+      error: errorFun
     })
   }
 }
