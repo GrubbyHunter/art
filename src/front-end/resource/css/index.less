@@ -4,7 +4,7 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-@import "./mixin.less";
+@import './mixin.less';
 
 .main {
   margin: 0 auto;
@@ -99,6 +99,8 @@
         line-height: 30px;
         font-size: 14px;
         margin-bottom: 15px;
+        position: relative;
+        overflow: hidden;
 
         ul {
           display: inline-block;
@@ -120,7 +122,9 @@
 
         .tag-more {
           color: #ffa2c9;
-          float: right;
+          position: absolute;
+          right: 0;
+          top: 0;
           height: 30px;
           display: block;
           text-decoration: underline;
@@ -136,13 +140,13 @@
           margin-bottom: 15px;
           padding: 10px;
 
-          &:first-child {
-            padding-left: 0;
-          }
+          // &:first-child {
+          //   padding-left: 0;
+          // }
 
-          &:nth-child(4n) {
-            padding-right: 0;
-          }
+          // &:nth-child(4n) {
+          //   padding-right: 0;
+          // }
 
           .box-sizing();
 

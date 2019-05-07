@@ -6,7 +6,7 @@
  */
 import React from 'react'
 import Item from './item'
-import { max_tags } from './../../common/data'
+import { max_tags, max_index_list } from './../../common/data'
 class InfoItemComponent extends React.Component {
   render() {
     let { result, tab } = this.props
@@ -17,7 +17,7 @@ class InfoItemComponent extends React.Component {
           {tab.title}
         </a>
         {this.renderInfoTag(result.tags)}
-        {this.renderItemList()}
+        {this.renderItemList(result.list)}
       </div>
     )
   }
@@ -43,13 +43,13 @@ class InfoItemComponent extends React.Component {
     )
   }
 
-  renderItemList() {
-    let a = [1, 2, 3, 4, 5, 6, 7, 8]
+  renderItemList(list) {
+    list = list.slice(0, max_index_list)
 
     return (
       <ul className="item-list">
-        {_.map(a, (item, key) => {
-          return <Item key={key} />
+        {_.map(list, (item, key) => {
+          return <Item result={item} key={key} />
         })}
       </ul>
     )

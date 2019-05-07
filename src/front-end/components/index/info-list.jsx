@@ -18,7 +18,6 @@ class InfoListComponent extends React.Component {
 
     GetListModel.fetch(
       data => {
-        debugger
         this.setState(data)
       },
       error => {
