@@ -57,12 +57,4 @@ export default class Ajax {
       dataFilter: this.dataFormat
     })
   }
-
-  dataFormat(data) {
-    if (!data) {
-      return ''
-    }
-
-    return data
-  }
 }

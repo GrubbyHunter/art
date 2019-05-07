@@ -18,6 +18,13 @@ class GetList extends Ajax {
 
     return this
   }
+
+  // 格式化数据
+  dataFormat(data) {
+    if (!data) {
+      return []
+    }
+  }
 }
 
 let model = new GetList()

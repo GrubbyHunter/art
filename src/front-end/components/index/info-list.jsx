@@ -10,15 +10,14 @@ import InfoItem from './info-item'
 import GetListModel from '../../model/get-list'
 class InfoListComponent extends React.Component {
   UNSAFE_componentWillMount() {
-    let request = GetListModel.fetch()
-
-    request.done(data => {
-      debugger
-    })
-
-    request.fail(data => {
-      debugger
-    })
+    GetListModel.fetch().then(
+      data => {
+        debugger
+      },
+      error => {
+        console.warn('请求列表失败', error)
+      }
+    )
   }
 
   render() {
