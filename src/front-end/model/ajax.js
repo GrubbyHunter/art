@@ -27,8 +27,6 @@ export default class Ajax {
     this.data = {}
     this.name = ''
     this.dataType = 'json'
-    this.success = () => console.log(`请求${name}成功`)
-    this.error = err => console.log(`请求${name}失败`, err)
     this.timeout = 2000
     this.type = 'POST'
   }
