@@ -6,30 +6,37 @@
  */
 import React from 'react'
 import Item from './item'
-
+import { max_tags } from './../../common/data'
 class InfoItemComponent extends React.Component {
   render() {
-    let { item } = this.props
+    let { result, tab } = this.props
 
     return (
       <div className="info-container">
-        <a className="h-title" name={item.key}>
-          {item.title}
+        <a className="h-title" name={tab.key}>
+          {tab.title}
         </a>
-        {this.renderInfoTag()}
+        {this.renderInfoTag(result.tags)}
         {this.renderItemList()}
       </div>
     )
   }
 
-  renderInfoTag() {
+  renderInfoTag(tags) {
+    let length = 0
+
     return (
       <div className="info-tag">
         <ul className="info-tag-ul">
-          <li key="01">场景动画</li>
-          <li key="02">UI设计</li>
-          <li key="03">UI设计</li>
-          <li key="04">UI设计</li>
+          {_.map(tags, (tag, index) => {
+            length++
+            // 最多只展示4个标签
+            if (length > max_tags) {
+              return null
+            }
+
+            return <li key={index}>{tag}</li>
+          })}
         </ul>
         <a className="tag-more">查看更多</a>
       </div>

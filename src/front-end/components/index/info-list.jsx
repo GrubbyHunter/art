@@ -10,9 +10,16 @@ import InfoItem from './info-item'
 import GetListModel from '../../model/get-list'
 class InfoListComponent extends React.Component {
   UNSAFE_componentWillMount() {
+    this.setState({
+      recommend: {},
+      second: {},
+      third: {}
+    })
+
     GetListModel.fetch(
       data => {
         debugger
+        this.setState(data)
       },
       error => {
         console.error('请求列表失败', error)
@@ -21,13 +28,27 @@ class InfoListComponent extends React.Component {
   }
 
   render() {
+    let { recommend, second, third } = this.state
+
     return (
       <div className="info-list">
-        {_.map(TAB, (item, key) => {
-          return <InfoItem item={item} key={key} />
-        })}
+        {this.renderItem(recommend, TAB[0])}
+        {this.renderItem(second, TAB[1])}
+        {this.renderItem(third, TAB[2])}
       </div>
     )
+  }
+
+  renderItem(result, tab) {
+    if (!result) {
+      return null
+    }
+
+    if (_.isEmpty(result.list) || _.isEmpty(result.tags)) {
+      return null
+    }
+
+    return <InfoItem result={result} tab={tab} />
   }
 }
 
