@@ -116,14 +116,14 @@ module.exports = function(webpackEnv) {
   let entryPaths = {}
   Object.keys(paths.allControllerPath).forEach(item => {
     entryPaths[item] = [
-      require.resolve("react-dev-utils/webpackHotDevClient"),
+      //require.resolve("react-dev-utils/webpackHotDevClient"),
       require.resolve("react-error-overlay"),
       paths.allControllerPath[item]
     ]
   })
   // 初始化文件作为单独的一个入口
   entryPaths.init = [
-    require.resolve("react-dev-utils/webpackHotDevClient"),
+    //require.resolve("react-dev-utils/webpackHotDevClient"),
     require.resolve("react-error-overlay"),
     paths.appInit
   ]
