@@ -10,7 +10,7 @@ import InfoItem from './info-item'
 import GetListModel from '../../model/get-list'
 class InfoListComponent extends React.Component {
   UNSAFE_componentWillMount() {
-    GetListModel.fetch().then(
+    GetListModel.fetch(
       data => {
         debugger
       },
