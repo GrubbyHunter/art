@@ -20,7 +20,7 @@
  */
 export default class Ajax {
   constructor() {
-    this.origin = 'http://111.67.206.67/'
+    this.origin = 'http://111.67.206.67:21915/'
     this.url = ''
     this.async = true
     this.beforeSend = () => console.log(`开始发起${name}请求`)
