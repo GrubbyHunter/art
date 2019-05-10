@@ -53,7 +53,7 @@ export default class Ajax {
       return
     }
 
-    $.ajax({
+    return $.ajax({
       url: this.origin + url,
       async,
       type,

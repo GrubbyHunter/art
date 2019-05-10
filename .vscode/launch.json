@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "启动打包",
+      "name": "启动debug",
       "type": "node",
       "request": "launch",
       "program": "${workspaceRoot}\\scripts\\start.js",
