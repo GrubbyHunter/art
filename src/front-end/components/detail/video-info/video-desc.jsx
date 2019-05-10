@@ -9,13 +9,15 @@ import { Button } from 'antd'
 
 class VideoDescComponent extends React.Component {
   render() {
+    let { detail } = this.props
+
     return (
       <div className="video-desc">
         <div className="f-l">
-          <div className="video-title">日系角色绘制基础课 VIP免费</div>
+          <div className="video-title">{detail.lsjianjie}</div>
           <div className="video-author">
             <span>2293在学</span>
-            <span>讲师：XXX</span>
+            <span>讲师：{detail.lsname}</span>
           </div>
         </div>
         <div className="f-r">

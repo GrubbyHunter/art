@@ -23,7 +23,7 @@ class LessonIndexComponent extends React.Component {
 
   render() {
     let { descVisible, menuVisible } = this.state
-
+    let { detail } = this.props
     return (
       <div className="lesson-info f-l">
         <Menu
@@ -37,8 +37,8 @@ class LessonIndexComponent extends React.Component {
             目录
           </Menu.Item>
         </Menu>
-        <LessonDesc visible={descVisible} />
-        <LessonMenu visible={menuVisible} />
+        <LessonDesc detail={detail} visible={descVisible} />
+        <LessonMenu detail={detail} visible={menuVisible} />
       </div>
     )
   }

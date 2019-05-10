@@ -11,13 +11,15 @@ import VideoDirectory from './video-directory'
 
 class VideoIndexComponent extends React.Component {
   render() {
+    let { detail, video } = this.props
+
     return (
       <div className="video-info">
         <div className="video-detail">
-          <Video />
-          <VideoDirectory />
+          <Video video={video} />
+          <VideoDirectory detail={detail} />
         </div>
-        <VideoDesc />
+        <VideoDesc detail={detail} />
       </div>
     )
   }

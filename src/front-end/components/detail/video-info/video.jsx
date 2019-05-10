@@ -5,15 +5,13 @@
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import React from 'react'
-
+import { video_data } from '../../../common/data'
 class VideoComponent extends React.Component {
   render() {
+    let { video } = this.props
+
     return (
-      <video
-        preload="preload"
-        controls
-        src="https://v.qingwk.com/video/330d12db-167361a42f0-0004-dd8e-5a2-52edc.mp4"
-      />
+      <video preload="preload" controls src={`${video_data.origin}${video}`} />
     )
   }
 }
