@@ -9,6 +9,8 @@ import Lesson from './lesson'
 import Author from './author'
 
 class LessonInfoComponent extends React.Component {
+  componentWillMount() {}
+
   render() {
     return (
       <div className="lesson">
