@@ -22,8 +22,7 @@ class RegistrationForm extends React.Component {
         let { email, nickname, password, phone } = values
 
         this.setState({
-          loading: true,
-          regMessage: ''
+          loading: true
         })
 
         RegisterModel.setParam({

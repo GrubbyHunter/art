@@ -24,6 +24,8 @@ class Alert extends React.Component {
           visible={visible}
           onOk={this.handleOk.bind(this)}
           onCancel={this.handleCancel.bind(this)}
+          okText="确定"
+          cancelText="取消"
         >
           <div>{message}</div>
         </Modal>

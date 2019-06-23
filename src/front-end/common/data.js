@@ -21,6 +21,9 @@ let data = {
   code: {
     error: 500,
     success: 200
+  },
+  store: {
+    userInfo: 'USER_INFO'
   }
 }
 module.exports = data

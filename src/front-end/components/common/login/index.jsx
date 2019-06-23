@@ -7,7 +7,8 @@
 import React from 'react'
 import './../../../resource/css/login.less'
 import { Button, Modal, Tabs } from 'antd'
-import { login_type } from '../../../common/data'
+import { login_type, store } from '../../../common/data'
+import localStore from '../../../common/store/local-storage'
 import Login from './login'
 import Register from './register'
 import Alert from '../alert'
@@ -16,13 +17,17 @@ const { TabPane } = Tabs
 
 class LoginComponent extends React.Component {
   UNSAFE_componentWillMount() {
+    let userInfo = localStore.get(store.userInfo)
+
     this.setState({
       ModalText: '',
       visible: false,
       confirmLoading: false,
       type: login_type.register, // 默认显示注册
       alertVisible: false,
-      alertMessage: ''
+      alertMessage: '',
+      isLogin: !_.isEmpty(userInfo) && !_.isEmpty(userInfo.token),
+      name: userInfo ? userInfo.nickname : ''
     })
   }
 
@@ -58,7 +63,22 @@ class LoginComponent extends React.Component {
   }
 
   render() {
-    let { alertMessage, alertVisible, alertTitle, onAlertOk } = this.state
+    let {
+      alertMessage,
+      alertVisible,
+      alertTitle,
+      onAlertOk,
+      isLogin,
+      name
+    } = this.state
+
+    if (isLogin) {
+      return (
+        <div className="header-right">
+          <span className="user-info">{name}</span>
+        </div>
+      )
+    }
 
     return (
       <div className="header-right">
@@ -117,6 +137,8 @@ class LoginComponent extends React.Component {
         <TabPane tab="登录" key={login_type.login}>
           <Login
             registerNow={this.showConfirm.bind(this, login_type.register)}
+            showAlert={this.showAlert.bind(this)}
+            hideAlert={this.hideAlert.bind(this)}
           />
         </TabPane>
       </Tabs>

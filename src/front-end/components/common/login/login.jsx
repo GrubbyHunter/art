@@ -1,12 +1,61 @@
 import React from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
-
+import LoginModel from '../../../model/login'
 class NormalLoginForm extends React.Component {
+  UNSAFE_componentWillMount() {
+    this.setState({
+      loading: false
+    })
+  }
   handleSubmit(e) {
+    let { showAlert, hideAlert } = this.props
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values)
+
+        this.setState({
+          loading: true
+        })
+
+        let { username, password } = values
+        LoginModel.setParam({
+          account: username,
+          password
+        }).fetch(
+          data => {
+            if (data.status) {
+              showAlert(
+                '登录成功',
+                '提示',
+                () => {
+                  window.location.reload()
+                },
+                () => {
+                  window.location.reload()
+                }
+              )
+            } else {
+              showAlert(
+                data.message || '登录失败请重试',
+                '提示',
+                hideAlert,
+                hideAlert
+              )
+            }
+
+            this.setState({
+              loading: false
+            })
+          },
+          error => {
+            console.log('登录失败', error)
+
+            this.setState({
+              loading: false
+            })
+          }
+        )
       }
     })
   }
@@ -14,6 +63,7 @@ class NormalLoginForm extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form
     let { registerNow } = this.props
+    let { loading } = this.state
 
     return (
       <Form onSubmit={this.handleSubmit.bind(this)} className="login-form">
@@ -54,7 +104,11 @@ class NormalLoginForm extends React.Component {
             htmlType="submit"
             className="login-form-button"
           >
-            登录
+            {loading ? (
+              <Icon type="loading" style={{ fontSize: 24 }} spin />
+            ) : (
+              '登录'
+            )}
           </Button>
         </Form.Item>
       </Form>
