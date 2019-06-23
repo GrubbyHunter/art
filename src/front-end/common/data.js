@@ -16,7 +16,11 @@ let data = {
   },
   login_type: {
     login: 'login',
-    rightser: 'register'
+    register: 'register'
+  },
+  code: {
+    error: 500,
+    success: 200
   }
 }
 module.exports = data
