@@ -1,32 +1,71 @@
-import {
-  Form,
-  Input,
-  Tooltip,
-  Icon,
-  Cascader,
-  Select,
-  Row,
-  Col,
-  Checkbox,
-  Button,
-  AutoComplete
-} from 'antd'
+import { Form, Input, Select, Checkbox, Button, Icon } from 'antd'
 import React from 'react'
 const { Option } = Select
+import RegisterModel from '../../../model/register'
 
 class RegistrationForm extends React.Component {
   UNSAFE_componentWillMount() {
     this.setState({
       confirmDirty: false,
+      loading: false,
       autoCompleteResult: []
     })
   }
 
   handleSubmit(e) {
+    let { showAlert, loginNow, hideAlert } = this.props
+
     e.preventDefault()
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values)
+        let { email, nickname, password, phone } = values
+
+        this.setState({
+          loading: true,
+          regMessage: ''
+        })
+
+        RegisterModel.setParam({
+          account: email,
+          password,
+          email,
+          nickname,
+          phone,
+          secret: ''
+        }).fetch(
+          data => {
+            if (data.status) {
+              showAlert(
+                '注册成功，立即登录',
+                '提示',
+                () => {
+                  loginNow()
+                  hideAlert()
+                },
+                hideAlert
+              )
+            } else {
+              showAlert(
+                data.message || '注册失败请重试',
+                '提示',
+                hideAlert,
+                hideAlert
+              )
+            }
+
+            this.setState({
+              loading: false
+            })
+          },
+          error => {
+            console.log('注册失败', error)
+
+            this.setState({
+              loading: false
+            })
+          }
+        )
       }
     })
   }
@@ -100,6 +139,7 @@ class RegistrationForm extends React.Component {
         <Option value="87">+87</Option>
       </Select>
     )
+    let { loading } = this.state
 
     return (
       <Form
@@ -201,7 +241,11 @@ class RegistrationForm extends React.Component {
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
-            注册
+            {loading ? (
+              <Icon type="loading" style={{ fontSize: 24 }} spin />
+            ) : (
+              '注册'
+            )}
           </Button>
         </Form.Item>
       </Form>

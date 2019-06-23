@@ -5,7 +5,7 @@
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import Ajax from './ajax'
-
+import { code } from '../common/data'
 class Register extends Ajax {
   constructor() {
     super()
@@ -14,13 +14,24 @@ class Register extends Ajax {
   }
 
   setParam(param) {
-    this.param = param
+    this.data = param
 
     return this
   }
 
   dataFormat(data) {
-    return data
+    let message = '',
+      status = true
+
+    if (!data.static) {
+      message = data.content
+      status = false
+    }
+
+    return {
+      status,
+      message
+    }
   }
 }
 

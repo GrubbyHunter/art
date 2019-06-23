@@ -10,6 +10,7 @@ import { Button, Modal, Tabs } from 'antd'
 import { login_type } from '../../../common/data'
 import Login from './login'
 import Register from './register'
+import Alert from '../alert'
 
 const { TabPane } = Tabs
 
@@ -19,7 +20,26 @@ class LoginComponent extends React.Component {
       ModalText: '',
       visible: false,
       confirmLoading: false,
-      type: login_type.register // 默认显示注册
+      type: login_type.register, // 默认显示注册
+      alertVisible: false,
+      alertMessage: ''
+    })
+  }
+
+  showAlert(message, alertTitle, onAlertOk, onAlertCancel) {
+    this.setState({
+      alertTitle,
+      alertVisible: true,
+      alertMessage: message,
+      onAlertOk,
+      onAlertCancel
+    })
+  }
+
+  hideAlert() {
+    this.setState({
+      alertVisible: false,
+      alertMessage: ''
     })
   }
 
@@ -38,6 +58,8 @@ class LoginComponent extends React.Component {
   }
 
   render() {
+    let { alertMessage, alertVisible, alertTitle, onAlertOk } = this.state
+
     return (
       <div className="header-right">
         <Button onClick={this.showConfirm.bind(this, login_type.register)}>
@@ -50,6 +72,13 @@ class LoginComponent extends React.Component {
           登录
         </Button>
         {this.renderConfirm()}
+        <Alert
+          title={alertTitle}
+          visible={alertVisible}
+          message={alertMessage}
+          onOk={onAlertOk}
+          onCancel={this.hideAlert.bind(this)}
+        />
       </div>
     )
   }
@@ -60,6 +89,7 @@ class LoginComponent extends React.Component {
     return (
       <div>
         <Modal
+          wrapClassName="login-wrap"
           title={this.renderTab.apply(this)}
           visible={visible}
           centered={true}
@@ -78,7 +108,11 @@ class LoginComponent extends React.Component {
     return (
       <Tabs activeKey={type} onTabClick={this.showConfirm.bind(this)}>
         <TabPane tab="注册" key={login_type.register}>
-          <Register />
+          <Register
+            loginNow={this.showConfirm.bind(this, login_type.login)}
+            showAlert={this.showAlert.bind(this)}
+            hideAlert={this.hideAlert.bind(this)}
+          />
         </TabPane>
         <TabPane tab="登录" key={login_type.login}>
           <Login
