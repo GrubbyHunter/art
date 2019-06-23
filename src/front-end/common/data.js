@@ -16,7 +16,7 @@ let data = {
   },
   login_type: {
     login: 'login',
-    rightser: 'register'
+    register: 'register'
   }
 }
 module.exports = data

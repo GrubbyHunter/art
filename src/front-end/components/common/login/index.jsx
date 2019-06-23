@@ -62,7 +62,6 @@ class LoginComponent extends React.Component {
         <Modal
           title={this.renderTab.apply(this)}
           visible={visible}
-          onOk={this.handleOk.bind(this)}
           centered={true}
           width={400}
           confirmLoading={confirmLoading}
@@ -74,13 +73,17 @@ class LoginComponent extends React.Component {
   }
 
   renderTab() {
+    let { type } = this.state
+
     return (
-      <Tabs defaultActiveKey={login_type.register} onChange={null}>
+      <Tabs activeKey={type} onTabClick={this.showConfirm.bind(this)}>
         <TabPane tab="注册" key={login_type.register}>
           <Register />
         </TabPane>
         <TabPane tab="登录" key={login_type.login}>
-          <Login />
+          <Login
+            registerNow={this.showConfirm.bind(this, login_type.register)}
+          />
         </TabPane>
       </Tabs>
     )
