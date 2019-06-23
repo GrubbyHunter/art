@@ -6,9 +6,10 @@
  */
 import React from 'react'
 import './../../resource/css/header.less'
-import { Menu, Input, Button } from 'antd'
+import { Menu, Input } from 'antd'
 import logoWhite from './../../resource/svg/logo_white.svg'
 import { MENU } from './../../common/text'
+import Login from './../common/login/index'
 
 const Search = Input.Search
 class Header extends React.Component {
@@ -49,10 +50,7 @@ class Header extends React.Component {
               style={{ width: 150 }}
             />
           </div>
-          <div className="header-right">
-            <Button>注册</Button>
-            <Button type="primary">登录</Button>
-          </div>
+          <Login />
         </div>
       </header>
     )

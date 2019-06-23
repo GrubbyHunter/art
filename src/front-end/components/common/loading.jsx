@@ -1,5 +1,5 @@
 /**
- * 产品详情页容器组件
+ * loading组件
  * @Component LoadingComponent
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>

@@ -13,6 +13,10 @@ let data = {
   },
   video_data: {
     origin: `${origin}:21916/video/`
+  },
+  login_type: {
+    login: 'login',
+    rightser: 'register'
   }
 }
 module.exports = data
