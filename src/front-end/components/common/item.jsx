@@ -41,7 +41,7 @@ class ItemComponent extends React.Component {
   }
 
   handleClick() {
-    window.location.href = '/detail'
+    window.location.href = '/detail.html'
   }
 }
 

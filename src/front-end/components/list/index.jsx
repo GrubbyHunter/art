@@ -8,7 +8,7 @@ import React from 'react'
 import 'antd/dist/antd.css'
 import './../../resource/css/common.less'
 import './../../resource/css/list.less'
-import GetResultModel from '../../model/get-result'
+import GetListModel from '../../model/get-list'
 import { BreadCrumbComponent } from './bread-crumb'
 import { ListComponent } from './list-container'
 import LoadingComponent from '../common/loading'
@@ -16,13 +16,15 @@ import Tab from './tab'
 class Index extends React.Component {
   componentWillMount() {
     this.setState({
-      list: [],
+      recommend: {},
+      second: {},
+      third: {},
       loading: true
     })
 
-    GetResultModel.fetch(
+    GetListModel.fetch(
       data => {
-        this.setState({ list: data, loading: false })
+        this.setState({ data, loading: false })
       },
       error => {
         console.error('请求列表失败', error)
@@ -31,12 +33,16 @@ class Index extends React.Component {
   }
 
   render() {
-    let { list, loading } = this.state
+    let { data, loading } = this.state
     return (
       <div className="list">
         <BreadCrumbComponent />
-        <Tab />
-        {loading ? <LoadingComponent /> : <ListComponent list={list} />}
+        {loading ? null : <Tab data={data} />}
+        {loading ? (
+          <LoadingComponent />
+        ) : (
+          <ListComponent list={data.second.list} />
+        )}
       </div>
     )
   }

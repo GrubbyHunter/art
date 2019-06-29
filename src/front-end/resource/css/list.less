@@ -26,6 +26,19 @@
     margin: 0 10px;
     text-align: left;
     background-color: white;
+    .ant-tabs-nav .ant-tabs-tab-active {
+      color: @main-color;
+    }
+    .ant-tabs-ink-bar {
+      background-color: @main-color;
+    }
+
+    .child-type {
+      display: inline-block;
+      padding: 10px 20px;
+      cursor: pointer;
+      color: @main-color;
+    }
 
     > div {
       display: inline-block;
@@ -33,6 +46,7 @@
 
     .ant-tabs-bar {
       border: 0;
+      margin: 0;
     }
   }
 }

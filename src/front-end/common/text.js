@@ -7,17 +7,17 @@
 
 let text = {
   MENU: [
-    { title: '首页', key: 'index' },
-    { title: '课程分类', key: 'list' },
+    { title: '首页', key: 'index.html' },
+    { title: '课程分类', key: 'list.html' },
     { title: '特训教室', key: 'classroom' },
     { title: '讲师', key: 'teacher' },
     { title: '学员作业', key: 'student' }
   ],
 
   TAB: [
-    { title: '推荐课程', key: 'recommend' },
-    { title: '3D课程', key: '3D' },
-    { title: '2D课程', key: '2D' }
+    { title: '推荐课程', key: 'recommend', index: 'recommend' },
+    { title: '3D课程', key: '3D', index: 'third' },
+    { title: '2D课程', key: '2D', index: 'second' }
   ],
 
   C_TYPE: {

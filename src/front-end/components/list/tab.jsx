@@ -6,7 +6,9 @@
  */
 import React from 'react'
 import { Tabs } from 'antd'
+import { TAB } from './../../common/text'
 const { TabPane } = Tabs
+TAB.splice(0, 0, { title: '全部分类', key: 'all' })
 
 class TabComponent extends React.Component {
   UNSAFE_componentWillMount() {
@@ -16,18 +18,40 @@ class TabComponent extends React.Component {
   }
 
   render() {
+    let { data } = this.props
+    let allTags = {}
+    _.each(data, item => {
+      allTags = _.extend(allTags, item.tags)
+    })
+
     return (
       <div className="tab-container">
-        <Tabs defaultActiveKey="1" onChange={null}>
-          <TabPane tab="Tab 1" key="1">
-            Content of Tab Pane 1
-          </TabPane>
-          <TabPane tab="Tab 2" key="2">
-            Content of Tab Pane 2
-          </TabPane>
-          <TabPane tab="Tab 3" key="3">
-            Content of Tab Pane 3
-          </TabPane>
+        <Tabs defaultActiveKey="all" onChange={null}>
+          {_.map(TAB, (item, key) => {
+            let tags = []
+            if (item.key == 'all') {
+              tags = allTags
+            } else {
+              tags = data[item.index].tags
+            }
+
+            return (
+              <TabPane tab={item.title} key={item.key}>
+                {_.map(tags, (item, key) => {
+                  debugger
+                  return (
+                    <a
+                      className="child-type"
+                      href={`list.html?type=${key}`}
+                      key={key}
+                    >
+                      {item}
+                    </a>
+                  )
+                })}
+              </TabPane>
+            )
+          })}
         </Tabs>
       </div>
     )
