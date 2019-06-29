@@ -38,7 +38,6 @@ class TabComponent extends React.Component {
             return (
               <TabPane tab={item.title} key={item.key}>
                 {_.map(tags, (item, key) => {
-                  debugger
                   return (
                     <a
                       className="child-type"

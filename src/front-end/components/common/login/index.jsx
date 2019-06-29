@@ -75,7 +75,9 @@ class LoginComponent extends React.Component {
     if (isLogin) {
       return (
         <div className="header-right">
-          <span className="user-info">{name}</span>
+          <a href="/user-center.html" className="user-info">
+            {name}
+          </a>
         </div>
       )
     }

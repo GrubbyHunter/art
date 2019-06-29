@@ -11,6 +11,13 @@ let utils = {
     }
 
     return arr[1] ? arr[1] : 'index'
+  },
+
+  getUrlParam() {
+    let url = window.location.search
+    let param = new URLSearchParams(url)
+
+    return param
   }
 }
 
