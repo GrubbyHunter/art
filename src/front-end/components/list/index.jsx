@@ -12,7 +12,7 @@ import GetResultModel from '../../model/get-result'
 import { BreadCrumbComponent } from './bread-crumb'
 import { ListComponent } from './list-container'
 import LoadingComponent from '../common/loading'
-
+import Tab from './tab'
 class Index extends React.Component {
   componentWillMount() {
     this.setState({
@@ -35,6 +35,7 @@ class Index extends React.Component {
     return (
       <div className="list">
         <BreadCrumbComponent />
+        <Tab />
         {loading ? <LoadingComponent /> : <ListComponent list={list} />}
       </div>
     )
