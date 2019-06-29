@@ -21,12 +21,12 @@ let MemoryData = {
   }
 }
 
-class MemoryStroage extends AbstractStorage {
+class MemoryStorage extends AbstractStorage {
   constructor() {
     super()
     this.proxy = MemoryData
-    this.saveTime = "15M"
+    this.saveTime = '15M'
   }
 }
 
-module.exports = new MemoryStroage()
+module.exports = new MemoryStorage()

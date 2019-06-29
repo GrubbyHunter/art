@@ -29,7 +29,6 @@ class Login extends Ajax {
       message = data.content
       status = false
     } else {
-      debugger
       localStore.set(store.userInfo, {
         nickname,
         token,

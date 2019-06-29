@@ -10,12 +10,12 @@ import { Menu, Input } from 'antd'
 import logoWhite from './../../resource/svg/logo_white.svg'
 import { MENU } from './../../common/text'
 import Login from './../common/login/index'
-
+import { utils } from './../../common/utils'
 const Search = Input.Search
 class Header extends React.Component {
   UNSAFE_componentWillMount() {
     this.setState({
-      current: 'index'
+      current: utils.getPageCode()
     })
   }
 
@@ -30,16 +30,13 @@ class Header extends React.Component {
           </div>
           <div className="header-center">
             <Menu
-              onClick={this.handleClick}
               selectedKeys={[this.state.current]}
               mode="horizontal" // 导航条的方向
             >
               {_.map(MENU, item => {
                 return (
                   <Menu.Item key={item.key}>
-                    <a href="" target="_blank">
-                      {item.title}
-                    </a>
+                    <a href={'/' + item.key}>{item.title}</a>
                   </Menu.Item>
                 )
               })}

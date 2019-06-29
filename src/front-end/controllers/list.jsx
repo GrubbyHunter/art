@@ -7,7 +7,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Index from '../components/index'
+import Index from '../components/list/index'
 import Header from '../components/common/header'
 import Footer from '../components/common/footer'
 import * as serviceWorker from '../serviceWorker'

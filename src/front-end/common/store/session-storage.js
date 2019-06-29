@@ -4,12 +4,12 @@
  */
 
 let AbstractStorage = require('AbstractStorage')
-class SessionStroage extends AbstractStorage {
+class SessionStorage extends AbstractStorage {
   constructor() {
     super()
     this.proxy = window.sessionStorage
-    this.saveTime = "15M"
+    this.saveTime = '15M'
   }
 }
 
-module.exports = new SessionStroage()
+module.exports = new SessionStorage()

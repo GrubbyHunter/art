@@ -76,3 +76,80 @@ img {
   height: 700px;
   line-height: 700px;
 }
+
+.item-list {
+  overflow: hidden;
+
+  > li {
+    float: left;
+    width: 25%;
+    margin-bottom: 15px;
+    padding: 10px;
+
+    // &:first-child {
+    //   padding-left: 0;
+    // }
+
+    // &:nth-child(4n) {
+    //   padding-right: 0;
+    // }
+
+    .box-sizing();
+
+    .item-img {
+      position: relative;
+      > img {
+        width: 100%;
+        .radius(10px 10px 0 0);
+      }
+
+      .lesson-count {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 25px;
+        line-height: 25px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        text-align: left;
+        padding-left: 10px;
+      }
+    }
+
+    .item-title {
+      background-color: white;
+      .radius(0 0 10px 10px);
+      .lesson-title {
+        font-size: 16px;
+        text-align: left;
+        margin: 10px 6px;
+        margin-top: 0;
+        height: 60px;
+      }
+
+      .teacher {
+        font-size: 14px;
+        overflow: hidden;
+        padding: 0 8px 8px 8px;
+
+        img,
+        .teacher-name {
+          float: left;
+          height: 35px;
+          line-height: 35px;
+        }
+
+        img {
+          .radius(40px);
+          margin-right: 15px;
+        }
+        .play-num {
+          float: right;
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+    }
+  }
+}

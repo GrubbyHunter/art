@@ -7,7 +7,7 @@
 import React from 'react'
 import { Icon } from 'antd'
 import demo001 from './../../resource/img/demo001.jpg'
-import { img_data } from './../../common/data'
+import { img_data } from '../../common/data'
 import userHeader from './../../resource/img/user_header.jpg'
 
 class ItemComponent extends React.Component {
@@ -41,7 +41,7 @@ class ItemComponent extends React.Component {
   }
 
   handleClick() {
-    window.location.href = '/detail.html'
+    window.location.href = '/detail'
   }
 }
 

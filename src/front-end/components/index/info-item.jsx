@@ -5,7 +5,7 @@
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import React from 'react'
-import Item from './item'
+import Item from '../common/item'
 import { max_tags, max_index_list } from './../../common/data'
 class InfoItemComponent extends React.Component {
   render() {

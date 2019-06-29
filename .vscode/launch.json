@@ -11,7 +11,8 @@
       "program": "${workspaceRoot}\\scripts\\start.js",
       "env": {
         "NODE_ENV": "development"
-      }
+      },
+      "args": ["--debug"]
     },
     {
       "name": "部署生产",

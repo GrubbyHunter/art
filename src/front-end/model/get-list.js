@@ -5,7 +5,7 @@
  * @author  shenbo<grubbyhunter@gmail.com>
  */
 import Ajax from './ajax'
-import { C_TYPE } from './../common/text'
+import { C_TYPE } from '../common/text'
 class GetList extends Ajax {
   constructor() {
     super()

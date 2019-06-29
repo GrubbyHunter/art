@@ -8,7 +8,7 @@
 let text = {
   MENU: [
     { title: '首页', key: 'index' },
-    { title: '课程分类', key: 'classes' },
+    { title: '课程分类', key: 'list' },
     { title: '特训教室', key: 'classroom' },
     { title: '讲师', key: 'teacher' },
     { title: '学员作业', key: 'student' }
