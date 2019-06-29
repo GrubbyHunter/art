@@ -19,14 +19,14 @@ class RegistrationForm extends React.Component {
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values)
-        let { email, nickname, password, phone } = values
+        let { account, email, nickname, password, phone } = values
 
         this.setState({
           loading: true
         })
 
         RegisterModel.setParam({
-          account: email,
+          account,
           password,
           email,
           nickname,
@@ -147,19 +147,15 @@ class RegistrationForm extends React.Component {
         className="register-form"
       >
         <Form.Item label="">
-          {getFieldDecorator('email', {
+          {getFieldDecorator('account', {
             validateTrigger: 'onBlur',
             rules: [
               {
-                type: 'email',
-                message: '请输入有效的电子邮箱'
-              },
-              {
                 required: true,
-                message: '请输入电子邮箱'
+                message: '请输入账号'
               }
             ]
-          })(<Input placeholder="请输入电子邮箱" />)}
+          })(<Input placeholder="请输入账号" />)}
         </Form.Item>
         <Form.Item label="" hasFeedback>
           {getFieldDecorator('password', {
@@ -193,6 +189,21 @@ class RegistrationForm extends React.Component {
               onBlur={this.handleConfirmBlur.bind(this)}
             />
           )}
+        </Form.Item>
+        <Form.Item label="">
+          {getFieldDecorator('email', {
+            validateTrigger: 'onBlur',
+            rules: [
+              {
+                type: 'email',
+                message: '请输入有效的电子邮箱'
+              },
+              {
+                required: true,
+                message: '请输入电子邮箱'
+              }
+            ]
+          })(<Input placeholder="请输入电子邮箱" />)}
         </Form.Item>
         <Form.Item label="">
           {getFieldDecorator('nickname', {
