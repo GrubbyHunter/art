@@ -4,14 +4,14 @@
  * @copyright art
  * @author  shenbo<grubbyhunter@gmail.com>
  */
-import React from 'react'
-import './../../../resource/css/login.less'
-import { Button, Modal, Tabs } from 'antd'
-import { login_type, store } from '../../../common/data'
-import localStore from '../../../common/store/local-storage'
-import Login from './login'
-import Register from './register'
-import Alert from '../alert'
+import React from "react"
+import "./../../../resource/css/login.less"
+import { Button, Modal, Tabs } from "antd"
+import { login_type, store } from "../../../common/data"
+import localStore from "../../../common/store/local-storage"
+import Login from "./login"
+import Register from "./register"
+import Alert from "../alert"
 
 const { TabPane } = Tabs
 
@@ -20,14 +20,14 @@ class LoginComponent extends React.Component {
     let userInfo = localStore.get(store.userInfo)
 
     this.setState({
-      ModalText: '',
+      ModalText: "",
       visible: false,
       confirmLoading: false,
       type: login_type.register, // 默认显示注册
       alertVisible: false,
-      alertMessage: '',
+      alertMessage: "",
       isLogin: !_.isEmpty(userInfo) && !_.isEmpty(userInfo.token),
-      name: userInfo ? userInfo.nickname : ''
+      name: userInfo ? userInfo.nickname : ""
     })
   }
 
@@ -44,7 +44,7 @@ class LoginComponent extends React.Component {
   hideAlert() {
     this.setState({
       alertVisible: false,
-      alertMessage: ''
+      alertMessage: ""
     })
   }
 
@@ -56,7 +56,7 @@ class LoginComponent extends React.Component {
   }
 
   handleCancel() {
-    console.log('Clicked cancel button')
+    console.log("Clicked cancel button")
     this.setState({
       visible: false
     })
@@ -74,8 +74,8 @@ class LoginComponent extends React.Component {
 
     if (isLogin) {
       return (
-        <div className="header-right">
-          <a href="/user-center.html" className="user-info">
+        <div className='header-right'>
+          <a href='/user-center.html?type=myLessons' className='user-info'>
             {name}
           </a>
         </div>
@@ -83,13 +83,13 @@ class LoginComponent extends React.Component {
     }
 
     return (
-      <div className="header-right">
+      <div className='header-right'>
         <Button onClick={this.showConfirm.bind(this, login_type.register)}>
           注册
         </Button>
         <Button
           onClick={this.showConfirm.bind(this, login_type.login)}
-          type="primary"
+          type='primary'
         >
           登录
         </Button>
@@ -111,7 +111,7 @@ class LoginComponent extends React.Component {
     return (
       <div>
         <Modal
-          wrapClassName="login-wrap"
+          wrapClassName='login-wrap'
           title={this.renderTab.apply(this)}
           visible={visible}
           centered={true}
@@ -129,14 +129,14 @@ class LoginComponent extends React.Component {
 
     return (
       <Tabs activeKey={type} onTabClick={this.showConfirm.bind(this)}>
-        <TabPane tab="注册" key={login_type.register}>
+        <TabPane tab='注册' key={login_type.register}>
           <Register
             loginNow={this.showConfirm.bind(this, login_type.login)}
             showAlert={this.showAlert.bind(this)}
             hideAlert={this.hideAlert.bind(this)}
           />
         </TabPane>
-        <TabPane tab="登录" key={login_type.login}>
+        <TabPane tab='登录' key={login_type.login}>
           <Login
             registerNow={this.showConfirm.bind(this, login_type.register)}
             showAlert={this.showAlert.bind(this)}
